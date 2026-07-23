@@ -1,243 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="GTyNmFWh93-sBBId5_guUH75l48No4pZgNMRrJn5EYA" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="S. Amin Moosavi - Project Scientist at UCLA.">
-    <meta name="keywords" content="S. Amin Moosavi, Amin Moosavi, UCLA, Computational Neuroscience, Seizure Dynamics, Machine Learning, Dynamical Systems, Statistical Physics, PyTorch">
-    <meta name="author" content="S. Amin Moosavi">
-    
+<meta name="google-site-verification" content="GTyNmFWh93-sBBId5_guUH75l48No4pZgNMRrJn5EYA" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>S. Amin Moosavi </title>
-    
-    <style>
-        :root {
-            --bg-color: #fcfcfc;
-            --text-color: #2c3e50;
-            --primary-accent: #2774ae; /* UCLA Blue */
-            --secondary-accent: #ffd100; /* UCLA Gold */
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-        }
+<title>S. Amin Moosavi</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 40px;
-        }
+:root{
+    --blue:#2774AE;
+    --gold:#FFD100;
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --text:#2c3e50;
+    --muted:#667085;
+    --border:#e4e7ec;
+}
 
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            aside {
-                text-align: center;
-            }
-        }
+*{
+    box-sizing:border-box;
+}
 
-        /* Sidebar Styling */
-        aside {
-            position: sticky;
-            top: 40px;
-            height: fit-content;
-        }
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.7;
+}
 
-        .profile-img {
-            width: 100%;
-            max-width: 220px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-accent);
-            margin-bottom: 20px;
-        }
+.container{
+    max-width:820px;
+    margin:auto;
+    padding:32px 20px 60px;
+}
 
-        h1 {
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
-            color: var(--primary-accent);
-        }
+/* Header */
 
-        .tagline {
-            font-size: 1rem;
-            color: #64748b;
-            margin-bottom: 20px;
-        }
+header{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:40px 30px;
+    text-align:center;
+    margin-bottom:40px;
+}
 
-        .social-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.profile-img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--blue);
+    margin-bottom:20px;
+}
 
-        .social-links li {
-            margin-bottom: 12px;
-        }
+h1{
+    margin:0;
+    color:var(--blue);
+    font-size:2.2rem;
+}
 
-        .social-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.2s;
-        }
+.subtitle{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:1.05rem;
+}
 
-        .social-links a:hover {
-            color: var(--primary-accent);
-        }
+.links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-top:28px;
+}
 
-        /* Main Content Styling */
-        main section {
-            margin-bottom: 40px;
-        }
+.links a{
+    text-decoration:none;
+    color:var(--text);
+    background:#eef3f7;
+    padding:10px 18px;
+    border-radius:24px;
+    transition:.2s;
+}
 
-        h2 {
-            font-size: 1.4rem;
-            border-bottom: 2px solid var(--primary-accent);
-            padding-bottom: 5px;
-            margin-top: 0;
-            color: var(--primary-accent);
-        }
+.links a:hover{
+    background:var(--blue);
+    color:white;
+}
 
-        p {
-            font-size: 1.05rem;
-            color: #334155;
-        }
+/* Sections */
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+section{
+    margin-bottom:50px;
+}
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
+h2{
+    color:var(--blue);
+    margin-bottom:18px;
+    border-bottom:2px solid var(--blue);
+    padding-bottom:6px;
+}
 
-        .card h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.15rem;
-        }
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    margin-bottom:18px;
+    transition:.2s;
+}
 
-        .card h3 a {
-            color: var(--primary-accent);
-            text-decoration: none;
-        }
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
 
-        .card h3 a:hover {
-            text-decoration: underline;
-        }
+.card h3{
+    margin:0 0 10px;
+    font-size:1.15rem;
+}
 
-        .tech-badge {
-            display: inline-block;
-            background: #f1f5f9;
-            color: #475569;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-right: 6px;
-            margin-top: 8px;
-            font-weight: 500;
-        }
+.card a{
+    color:var(--blue);
+    text-decoration:none;
+}
 
-        footer {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid var(--border-color);
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
+.card a:hover{
+    text-decoration:underline;
+}
+
+.card p{
+    margin:0;
+    color:#4b5563;
+}
+
+footer{
+    text-align:center;
+    color:var(--muted);
+    padding-top:30px;
+    border-top:1px solid var(--border);
+    font-size:.95rem;
+}
+
+@media (max-width:700px){
+
+    .container{
+        padding:18px;
+    }
+
+    header{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    .profile-img{
+        width:120px;
+        height:120px;
+    }
+
+    .links{
+        gap:8px;
+    }
+
+    .links a{
+        font-size:.9rem;
+        padding:8px 14px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <div class="container">
-        
-        <!-- Profile Column (Sidebar) -->
-        <aside>
-            <!-- Add a photo.jpg to your repository root if you want to use this image tag -->
-            <!-- <img src="photo.jpg" alt="S. Amin Moosavi" class="profile-img"> -->
-            <h1>S. Amin Moosavi</h1>
-            <p class="tagline">Profile</p>
-            
-            <ul class="social-links">
-                <li><a href="https://github.com/aminmoosavi" target="_blank">💻 GitHub Profile</a></li>
-                <li><a href="https://scholar.google.com/citations?user=dTb_rtsAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a></li>
-                <li><a href="https://www.researchgate.net/profile/S-Amin-Moosavi" target="_blank">🔬 ResearchGate</a></li>
-                <li><a href="https://www.linkedin.com/in/s-amin-moosavi/" target="_blank">👔 LinkedIn</a></li>
-            </ul>
-        </aside>
+<div class="container">
 
-        <!-- Main Content Area -->
-        <main>
-            
-            <!-- About Section -->
-            <section id="about">
-                <h2>Research</h2>
-                <p> 
-                    I work at the cross-section of Neuroscience, Dynamical Systems, 
-                    Machine Learning, and Statistical Physics.
-                </p>
-            </section>
+<header>
 
-            <!-- Research Repositories Section -->
-            <section id="software">
-                <h2>Open Source Software & Repositories</h2>
-                
-                <div class="card">
-                    <h3><a href="https://github.com/aminmoosavi/PyTorch" target="_blank">PyTorch Crash Course</a></h3>
-                    <p>Implementing deep learning models in PyTorch. Including a miniature GPT language model.</p> 
-                </div>
-                
-                <div class="card">
-                    <h3><a href="https://github.com/aminmoosavi/SeizureModels" target="_blank">Seizure Models Simulations and Stability Analysis</a></h3>
-                    <p>Spreading dynamics and controllability of epileptic seizures</p>  
-                </div>
+<!--
+<img src="photo.jpg"
+     alt="S. Amin Moosavi"
+     class="profile-img">
+-->
 
-                <div class="card">
-                    <h3><a href="https://github.com/aminmoosavi/EyeCal" target="_blank">Receptive Field Estimation and Eye Movement Corrections </a></h3>
-                    <p>Subspace reverse-correlation estimation of neuronal receptive fields during free viewing.</p>  
-                </div>
+<h1>S. Amin Moosavi</h1>
 
-                
-            </section>
+<p class="subtitle">
+Project Scientist<br>
+Department of Neurobiology<br>
+David Geffen School of Medicine, UCLA
+</p>
 
-            <!-- Academic Affiliations -->
-            <section id="affiliations">
-                <h2>Institutional Details</h2>
-                <p>
-                    Department of Neurobiology<br>
-                    David Geffen School of Medicine<br>
-                    University of California, Los Angeles (UCLA)<br>
-                    Los Angeles, CA, USA
-                </p>
-            </section>
+<div class="links">
+    <a href="https://github.com/aminmoosavi" target="_blank">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=dTb_rtsAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    <a href="https://www.researchgate.net/profile/S-Amin-Moosavi" target="_blank">ResearchGate</a>
+    <a href="https://www.linkedin.com/in/s-amin-moosavi/" target="_blank">LinkedIn</a>
+</div>
 
-        </main>
+</header>
 
-        <footer>
-            <p>&copy; 2026 S. Amin Moosavi. Built using GitHub Pages portfolio optimization layout.</p>
-        </footer>
+<section>
 
-    </div>
+<h2>Research</h2>
+
+<p>
+My research lies at the intersection of computational neuroscience,
+dynamical systems, machine learning, and statistical physics.
+I develop mathematical and computational methods to study neural dynamics,
+epilepsy, and large-scale brain activity.
+</p>
+
+</section>
+
+<section>
+
+<h2>Open Source Software</h2>
+
+<div class="card">
+<h3>
+<a href="https://github.com/aminmoosavi/PyTorch" target="_blank">
+PyTorch Crash Course
+</a>
+</h3>
+<p>
+Hands-on PyTorch tutorials covering neural networks,
+modern deep learning workflows, and a miniature GPT language model.
+</p>
+</div>
+
+<div class="card">
+<h3>
+<a href="https://github.com/aminmoosavi/SeizureModels" target="_blank">
+Seizure Models
+</a>
+</h3>
+<p>
+Simulation, stability analysis, and controllability of
+epileptic seizure dynamics.
+</p>
+</div>
+
+<div class="card">
+<h3>
+<a href="https://github.com/aminmoosavi/EyeCal" target="_blank">
+EyeCal
+</a>
+</h3>
+<p>
+Methods for receptive field estimation and eye movement correction
+during free-viewing experiments.
+</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Affiliation</h2>
+
+<p>
+
+Department of Neurobiology<br>
+David Geffen School of Medicine<br>
+University of California, Los Angeles (UCLA)<br>
+Los Angeles, California, USA
+
+</p>
+
+</section>
+
+<footer>
+
+© 2026 S. Amin Moosavi
+
+</footer>
+
+</div>
 
 </body>
 </html>
-
